@@ -1,0 +1,5 @@
+- name: activate console and exit initial setup
+  raw: sudo bash -c 'pmchat "" "no\r\n\d\d\dno\r\n\d\d\dexit\r\n\d\r\n\d\r\n\d\r\n" < /dev/serial/by-opengear-id/{{ inventory_hostname }} > /dev/serial/by-opengear-id/{{ inventory_hostname }}'
+###  raw: pmchat "" "no\r\n\d\d\dno\r\n\d\d\dexit\r\n\d\r\n\d\r\n\d\r\n" < /dev/{{ inventory_hostname }} > /dev/{{ inventory_hostname }}
+- pause:
+    minutes: 1

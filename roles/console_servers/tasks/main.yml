@@ -1,0 +1,2 @@
+- name: configure console server for newlines on connect
+  raw: echo 'sudo bash -c "echo > $(printf /dev/serial/by-opengear-id/port%02d $1)"' | sudo tee /etc/config/pmshell-start.sh

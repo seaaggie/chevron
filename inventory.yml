@@ -1,0 +1,16 @@
+all:
+  children:
+    console_servers:
+      hosts:
+        ogcs:
+    console_ports:
+      hosts:
+#        port05:
+        port08:
+#        port[01:48]:
+    ios_devices:
+      hosts:
+        WS-C2960X-24PS:
+          ansible_ssh_user: 'ramtin+port8'
+#        hostname2.final.foobar.com:
+#          ansible_ssh_user: 'root:port8'

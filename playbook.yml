@@ -1,0 +1,17 @@
+- hosts: console_servers
+  roles:
+    - console_servers
+  gather_facts: False
+- hosts: console_ports
+  roles:
+    - console_ports
+  gather_facts: False
+- hosts: ios_devices
+  roles:
+    - ios_devices
+  gather_facts: False
+#- hosts: console_servers
+#  roles:
+#    - console_servers_deconfig
+#  gather_facts: False
+

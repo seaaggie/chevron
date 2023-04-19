@@ -1,0 +1,15 @@
+Pre-requisites:
+
+- Ansible 2.9 or higher is installed
+- Ansible netcommon.cli Plugin is Installed (ansible-galaxy collection install ansible.netcommon)
+- Ansible netcommon.cli platform plugin is installed (https://docs.ansible.com/ansible/latest/network/user_guide/platform_index.html)
+	Example: ansible-galaxy collection install cisco.ios
+- Ansible user's SSH keys is authorized on the console server host
+- Console Servers will need a copy of the '100_admin_role' insdie the /etc/sudoers.d/ direcroty. this is included in the tar file. 
+- Your console server address is set in group_vars/all.yml
+- End device config is hosted under roles/ios_devices/tasks/main.yml
+- End device Module info is hosted under roles/ios_devices/vars/main.yml
+
+Usage:
+
+ansible-playbook -vvv -i inventory.yml playbook.yml

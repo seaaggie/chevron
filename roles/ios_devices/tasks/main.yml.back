@@ -1,0 +1,30 @@
+- name: bring up interface
+  ansible.netcommon.cli_command:
+    command: "{{ item }}"
+  loop:
+    - "en"
+    - "conf t"
+    - "file prompt quiet"
+    - "no logging console"
+    - "interface fa0"
+    - "ip address dhcp"
+    - "no shut"
+    - "end"
+
+- pause:
+    seconds: 40
+
+- name: fetch final config
+  ansible.netcommon.cli_command:
+    command: "copy http://{{ config_fileserver }}/{{ inventory_hostname }}.cfg startup-config"
+
+- name: reboot device
+  ansible.netcommon.cli_command:
+    command: "reload"
+    prompt:
+      - "Save"
+      - "confirm"
+    answer:
+      - "no"
+      - "y"
+#    check_all: True

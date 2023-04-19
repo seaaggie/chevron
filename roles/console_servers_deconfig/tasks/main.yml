@@ -1,0 +1,2 @@
+- name: deconfigure console server for newlines on connect
+  raw: sudo rm -f /etc/config/pmshell-start.sh
